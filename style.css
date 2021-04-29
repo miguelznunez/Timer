@@ -1,0 +1,44 @@
+body{
+  overflow: hidden;
+  font-family: 'software_tester_7regular';
+  background: linear-gradient(180deg,white, #32324e);
+}
+
+.container{
+  width: 95%;
+  margin: auto;
+  cursor: pointer;
+}
+
+.timer{
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.timer h1{
+  user-select: none;
+  color: #fff;
+  font-size: 10vw;
+}
+
+@media(max-width:768px){
+  .timer h1{
+    font-size: 4rem;
+  }
+}
+
+@media(max-width:480px){
+  .timer h1{
+    font-size: 3.5rem;
+  }
+}
+
+@media(max-width:320px){
+  .timer h1{
+    font-size: 3rem;
+  }
+}
