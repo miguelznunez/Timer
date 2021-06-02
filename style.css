@@ -22,7 +22,7 @@ body{
 .timer h1{
   user-select: none;
   color: #fff;
-  font-size: 10vw;
+  font-size: 8vw;
 }
 
 @media(max-width:768px){
