@@ -5,14 +5,12 @@ body{
 }
 
 .container{
-  width: 95%;
+  width: 1280px;
   margin: auto;
   cursor: pointer;
 }
 
 .timer{
-  width: fit-content;
-  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,6 +21,12 @@ body{
   user-select: none;
   color: #fff;
   font-size: 8vw;
+}
+
+@media(max-width:1280px){
+  .container{
+    width: 95%;
+  }
 }
 
 @media(max-width:768px){
