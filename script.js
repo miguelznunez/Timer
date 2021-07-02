@@ -6,7 +6,7 @@ var flag = false; // to control the start/stop of the timer
 
 const container = document.getElementsByClassName("container")[0];
 
-container.addEventListener("click", function(){
+container.addEventListener("click", () => {
   if(!flag){
     startTimer();
     flag = true;
@@ -17,11 +17,11 @@ container.addEventListener("click", function(){
   }
 })
 
-container.addEventListener("dblclick", function(){
+container.addEventListener("dblclick", () => {
   resetTimer();
 })
 
-function startTimer(){
+startTimer = () => {
   if(timeBegan === null)
     timeBegan = new Date();
 
@@ -31,12 +31,12 @@ function startTimer(){
   startInterval = setInterval(clockRunning, 10);
 }
 
-function stopTimer(){
+stopTimer = () => {
   timeStopped = new Date();
   clearInterval(startInterval);
 }
 
-function clockRunning(){
+clockRunning = () => {
   var currentTime = new Date();
   var timeElapsed = new Date(currentTime - timeBegan - stoppedDuration);
 
@@ -52,7 +52,7 @@ function clockRunning(){
   (milliseconds = milliseconds < 10 ? '0' + milliseconds:milliseconds);
 }
 
-function resetTimer(){
+resetTimer = () => {
   clearInterval(startInterval);
   timeBegan = null;
   timeStopped = null;
