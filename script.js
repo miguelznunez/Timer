@@ -4,9 +4,7 @@ var stoppedDuration = 0; // how long was the timer stopped?
 var startInterval = null; // this is needed to stop the startInterva() method
 var flag = false; // to control the start/stop of the timer
 
-const container = document.getElementsByClassName("container")[0];
-
-container.addEventListener("click", () => {
+document.querySelector(".container").addEventListener("click", () => {
   if(!flag){
     startTimer();
     flag = true;
@@ -17,7 +15,7 @@ container.addEventListener("click", () => {
   }
 })
 
-container.addEventListener("dblclick", () => {
+document.querySelector(".container").addEventListener("dblclick", () => {
   resetTimer();
 })
 
@@ -37,16 +35,16 @@ stopTimer = () => {
 }
 
 clockRunning = () => {
-  var currentTime = new Date();
-  var timeElapsed = new Date(currentTime - timeBegan - stoppedDuration);
+  let currentTime = new Date();
+  let timeElapsed = new Date(currentTime - timeBegan - stoppedDuration);
 
-  var minutes = timeElapsed.getUTCMinutes();
-  var seconds = timeElapsed.getUTCSeconds();
-  var milliseconds = timeElapsed.getUTCMilliseconds();
+  let minutes = timeElapsed.getUTCMinutes();
+  let seconds = timeElapsed.getUTCSeconds();
+  let milliseconds = timeElapsed.getUTCMilliseconds();
 
   milliseconds = Math.floor(milliseconds/10);
 
-  document.getElementById("timer-display").innerHTML = 
+  document.querySelector("#timer_display").textContent = 
   (minutes = minutes < 10 ? '0' + minutes:minutes) + ":"+
   (seconds = seconds < 10 ? '0' + seconds:seconds) + ":" +
   (milliseconds = milliseconds < 10 ? '0' + milliseconds:milliseconds);
@@ -57,6 +55,6 @@ resetTimer = () => {
   timeBegan = null;
   timeStopped = null;
   stoppedDuration = 0;
-  document.getElementById("timer-display").innerHTML = "00:00:00";
+  document.querySelector("#timer_display").innerHTML = "00:00:00";
   flag = false;
 }
